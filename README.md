@@ -241,7 +241,7 @@ npm run build
 
 ## 📚 Documentation
 
-Visit our [Storybook](https://storybook-url-here) for interactive component documentation and examples.
+Visit [Storybook](https://storybook.js.org/docs) for interactive component documentation and examples.
 
 ## 🧪 Testing
 
@@ -263,7 +263,7 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 
 ## 🔗 Links
 
-- [Documentation](https://storybook-url-here)
+- [Documentation](https://storybook.js.org/docs)
 - [GitHub Repository](https://github.com/erinmyoung/erinmyoung-ui)
 - [Issues](https://github.com/erinmyoung/erinmyoung-ui/issues)
 - [Changelog](https://github.com/erinmyoung/erinmyoung-ui/releases)
