@@ -1,0 +1,33 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import SpinnerExample from "./SpinnerExample.tsx";
+import * as Spinner from "./Spinner.stories.tsx";
+
+<Meta of={Spinner} title="Spinner" />
+
+# Spinner
+
+Spinner component with different props.
+
+#### Example
+
+<Canvas of={Spinner.Default} layout="padded" />
+
+## Usage
+
+```ts
+import {Spinner} from "erinmyoung-ui";
+
+const SpinnerExample = () => {
+  return (
+      <Spinner
+        size={"small"}
+      />
+  );
+};
+
+export default SpinnerExample;
+```
+
+#### Arguments
+
+- **size** - A string with one of three possible values: "small," "medium," or "large." It defines the width and height of the spinner.

@@ -1,0 +1,34 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import ExitExample from "./ExitExample.tsx";
+import * as Exit from "./Exit.stories.tsx";
+
+<Meta of={Exit} title="Exit" />
+
+# Exit
+
+Exit component with different props.
+
+#### Example
+
+<Canvas of={Exit.Default} layout="padded" />
+
+## Usage
+
+```ts
+import {Exit} from "erinmyoung-ui";
+
+const ExitExample = () => {
+  return (
+      <Exit
+        onClick={()=> console.log("Clicked")}
+      />
+  );
+};
+
+export default ExitExample;
+```
+
+#### Arguments
+
+- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
+- **onClick** - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.

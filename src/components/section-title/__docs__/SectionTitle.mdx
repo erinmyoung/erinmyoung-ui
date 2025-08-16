@@ -1,0 +1,37 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import SectionTitleExample from "./SectionTitleExample.tsx";
+import * as SectionTitle from "./SectionTitle.stories.tsx";
+
+<Meta of={SectionTitle} title="SectionTitle" />
+
+# Section Title
+
+SectionTitle component with different props.
+
+#### Example
+
+<Canvas of={SectionTitle.Primary} layout="padded" />
+
+## Usage
+
+```ts
+import {SectionTitle} from "erinmyoung-ui";
+
+const SectionTitleExample = () => {
+  return (
+    <SectionTitle
+      text={"Section Title"}
+      size={"small"}
+      $fillBgColor=true
+    />
+  );
+};
+
+export default SectionTitleExample;
+```
+
+#### Arguments
+
+- **text** - A string that represents the text content of the section title.
+- **size** - A string with one of three possible values: "small," "medium," or "large." It defines the font-size of the section title.
+- **$fillBgColor** - A string indicating the CSS background-color of the section title. This is useful when background colors on the page might change or to keep the title in visually in front of graphics. Must be a valid CSS value with %, px, etc.

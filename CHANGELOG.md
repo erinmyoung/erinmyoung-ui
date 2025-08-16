@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2025-08-16
+
+### Added
+
+- Initial release of Erin M Young UI component library
+- Core components: Button, Arrow, Exit, Icon, ImageWithBackground, List, ScrollProgress, SectionTitle, Spinner
+- Built-in theming system with light/dark modes
+- TypeScript support with full type definitions
+- Storybook documentation
+- Comprehensive test suite with Vitest
+- Accessibility features including contrast checking
+- Framer Motion animations
+- styled-components integration
+
+### Features
+
+- 🎨 Complete theming system (portfolio & store themes)
+- 🚀 Modern React 19 & TypeScript 5.8 support
+- 📱 Responsive design components
+- 🎭 Smooth animations
+- 📚 Interactive Storybook documentation
+- 🧪 100% test coverage
+- 🎯 Accessibility-first approach

@@ -1,0 +1,40 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import ButtonExample from "./ButtonExample.tsx";
+import * as Button from "./Button.stories.tsx";
+
+<Meta of={Button} title="Button" />
+
+# Button
+
+Button component with different props.
+
+#### Example
+
+<Canvas of={Button.Default} layout="padded" />
+
+## Usage
+
+```ts
+import {Button} from "erinmyoung-ui";
+
+const ButtonExample = () => {
+  return (
+      <Button
+        text={"Button"}
+        size={"small"}
+        onClick={()=> console.log("Clicked")}
+        aria-label={"Click to do something"}
+      />
+  );
+};
+
+export default ButtonExample;
+```
+
+#### Arguments
+
+- **text** - A string that represents the text content of the button.
+- **label** - A string that represents the aria-label of the button.
+- **size** - A string with one of three possible values: "small," "medium," or "large." It defines the font-size of the button.
+- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
+- **onClick** - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.

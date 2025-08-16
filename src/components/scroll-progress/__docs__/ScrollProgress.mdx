@@ -1,0 +1,43 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import ScrollProgressExample from "./ScrollProgressExample.tsx";
+import * as ScrollProgress from "./ScrollProgress.stories.tsx";
+
+<Meta of={ScrollProgress} title="ScrollProgress" />
+
+# ScrollProgress
+
+ScrollProgress component that tracks scroll within a container and displays a fixed progress indicator.
+
+#### Example
+
+<Canvas of={ScrollProgress.Default} layout="padded" />
+
+## Usage
+
+```ts
+import { useRef } from "react";
+import {ScrollProgress} from "erinmyoung-ui";
+
+const ScrollProgressExample = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div ref={containerRef} style={{ height: "300px", overflowY: "auto" }}>
+      {/* Your scrollable content */}
+      <ScrollProgress
+        $right={"2rem"}
+        $bottom={"2rem"}
+        size={80}
+        $container={containerRef}
+      />
+    </div>
+  );
+};
+```
+
+#### Arguments
+
+- **$right** - A string for determining how far from the right edge of the window the scroll progress button should be.
+- **$bottom** - A string for determining how far from the bottom edge of the window the scroll progress button should be.
+- **size** - A number for determining the size of the outer circle element and for the 50% calculation of the size for the inner arrow.
+- **$container** - A ref to a container element. The component will track scroll within this container and show as a fixed overlay.

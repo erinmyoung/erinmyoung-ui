@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import IconExample from "./IconExample.tsx";
+import * as Icon from "./Icon.stories.tsx";
+
+<Meta of={Icon} title="Icon" />
+
+# Icon
+
+Icon component with different props.
+
+#### Example
+
+<Canvas of={Icon.Default} layout="padded" />
+
+## Usage
+
+```ts
+import {Icon} from "erinmyoung-ui";
+
+const IconExample = () => {
+  return (
+      <Icon
+        src={"/assets/github.png"}
+        alt={"Github icon"}
+        $selectevents={false}
+        size={"small"}
+      />
+  );
+};
+
+export default IconExample;
+```
+
+#### Arguments
+
+- **src** - A string representing the source of the icon image whether it's an external url or relative path in project.
+- **alt** - A string that represents the alt text for the icon image.
+- **$selectevents** - A boolean that determines if the icon can be interacted with via user-select and pointer-events.
+- **size** - A string with one of three possible values: "small," "medium," or "large." It defines the width and height of the icon image.

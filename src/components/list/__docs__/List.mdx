@@ -1,0 +1,32 @@
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import ListExample from "./ListExample.tsx";
+import * as List from "./List.stories.tsx";
+
+<Meta of={List} title="List" />
+
+# List
+
+List component with different props.
+
+#### Example
+
+<Canvas of={List.Default} layout="padded" />
+
+## Usage
+
+```ts
+import {List} from "erinmyoung-ui";
+
+const ListExample = () => {
+  return (
+    <List items={["First item", "Second item", "Third item"]} />
+  );
+};
+
+export default ListExample;
+```
+
+#### Arguments
+
+- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
+- **onClick** - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.

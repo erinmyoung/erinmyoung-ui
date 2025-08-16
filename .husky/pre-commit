@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Auto-fix stage
+npm run lint:fix
+npm run format
+
+# If any files were fixed, abort commit and show a message
+git diff --quiet || {
+  echo "\n────────────────────────────────────────────────────────────────"
+  echo "✨ Some files were automatically fixed! ✨"
+  echo "Please add and commit the changes, then try committing again."
+  echo "────────────────────────────────────────────────────────────────\n"
+  exit 1
+}
+
+# Check stage
+npm run lint
+npm test
