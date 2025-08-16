@@ -1,6 +1,6 @@
 {
   "name": "erinmyoung-ui",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "description": "A modern React component library built with Storybook, TypeScript, styled-components, and Framer Motion",
   "author": "Erin Young erinmyoung12@gmail.com",
