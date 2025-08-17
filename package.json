@@ -45,6 +45,9 @@
     "prepare": "husky",
     "precommit": "npm run lint && npm test"
   },
+  "publishConfig": {
+    "erinmyoung:registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "framer-motion": "^12.23.12",
     "react": "^19.1.0",
