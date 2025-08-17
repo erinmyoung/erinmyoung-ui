@@ -67,15 +67,15 @@ const Arrow = styled.div<{ size?: number }>`
 `;
 
 const ScrollProgress = ({
-  $right,
-  $bottom,
+  $right = "2rem",
+  $bottom = "2rem",
   size = 80,
   $container,
 }: ScrollProgressProps) => {
   // Use container scroll if $container is provided, otherwise use window scroll
-  const { scrollYProgress } = useScroll({
-    container: $container || undefined,
-  });
+  const { scrollYProgress } = useScroll(
+    $container ? { container: $container } : {},
+  );
 
   const progressValue = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const strokeDasharray = useTransform(progressValue, [0, 1], [283, 0]);
