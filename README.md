@@ -2,6 +2,7 @@
 
 A modern React component library built with Storybook, TypeScript, styled-components, and Framer Motion.
 
+[![npm version](https://badge.fury.io/js/@erinmyoung%2Ferinmyoung-ui.svg)](https://badge.fury.io/js/@erinmyoung%2Ferinmyoung-ui)
 [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue.svg)](https://www.typescriptlang.org/)
 [![Storybook](https://img.shields.io/badge/Storybook-9.1.0-pink.svg)](https://storybook.js.org/)
@@ -20,18 +21,20 @@ A modern React component library built with Storybook, TypeScript, styled-compon
 ## 📦 Installation
 
 ```bash
-npm install erinmyoung-ui styled-components framer-motion
+npm install @erinmyoung/erinmyoung-ui styled-components framer-motion
 # or
-yarn add erinmyoung-ui styled-components framer-motion
+yarn add @erinmyoung/erinmyoung-ui styled-components framer-motion
 # or
-pnpm add erinmyoung-ui styled-components framer-motion
+pnpm add @erinmyoung/erinmyoung-ui styled-components framer-motion
 ```
+
+> **Note:** `styled-components` and `framer-motion` are peer dependencies and must be installed separately.
 
 ## 🚀 Quick Start
 
 ```tsx
-import { Button, ThemeProvider } from "erinmyoung-ui";
-import { portfolioLight } from "erinmyoung-ui/themes";
+import { Button, portfolioLight } from "@erinmyoung/erinmyoung-ui";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   return (
@@ -53,7 +56,7 @@ function App() {
 Interactive button component with multiple sizes and hover effects.
 
 ```tsx
-import { Button } from "erinmyoung-ui";
+import { Button } from "@erinmyoung/erinmyoung-ui";
 
 <Button text="Click me" size="large" onClick={() => console.log("Clicked!")} />;
 ```
@@ -63,7 +66,7 @@ import { Button } from "erinmyoung-ui";
 Directional arrow button for navigation.
 
 ```tsx
-import { Arrow } from "erinmyoung-ui";
+import { Arrow } from "@erinmyoung/erinmyoung-ui";
 
 <Arrow $orientation="right" onClick={() => navigate("/next")} />;
 ```
@@ -73,7 +76,7 @@ import { Arrow } from "erinmyoung-ui";
 Close/exit button component.
 
 ```tsx
-import { Exit } from "erinmyoung-ui";
+import { Exit } from "@erinmyoung/erinmyoung-ui";
 
 <Exit onClick={() => closeModal()} />;
 ```
@@ -83,7 +86,7 @@ import { Exit } from "erinmyoung-ui";
 Versatile icon component with accessibility features and contrast checking.
 
 ```tsx
-import { Icon } from "erinmyoung-ui";
+import { Icon } from "@erinmyoung/erinmyoung-ui";
 
 <Icon
   src="/path/to/icon.svg"
@@ -98,7 +101,7 @@ import { Icon } from "erinmyoung-ui";
 Image component with background color support and responsive behavior.
 
 ```tsx
-import { ImageWithBackground } from "erinmyoung-ui";
+import { ImageWithBackground } from "@erinmyoung/erinmyoung-ui";
 
 <ImageWithBackground
   src="/path/to/image.jpg"
@@ -113,7 +116,7 @@ import { ImageWithBackground } from "erinmyoung-ui";
 Flexible list component for displaying items with consistent styling.
 
 ```tsx
-import { List } from "erinmyoung-ui";
+import { List } from "@erinmyoung/erinmyoung-ui";
 
 <List
   items={["Item 1", "Item 2", "Item 3"]}
@@ -127,7 +130,7 @@ import { List } from "erinmyoung-ui";
 Container-based scroll progress indicator with smooth animations.
 
 ```tsx
-import { ScrollProgress } from "erinmyoung-ui";
+import { ScrollProgress } from "@erinmyoung/erinmyoung-ui";
 import { useRef } from "react";
 
 function ScrollableContent() {
@@ -152,7 +155,7 @@ function ScrollableContent() {
 Decorative section title with custom graphics.
 
 ```tsx
-import { SectionTitle } from "erinmyoung-ui";
+import { SectionTitle } from "@erinmyoung/erinmyoung-ui";
 
 <SectionTitle text="Welcome Section" size="large" $fillBgColor={true} />;
 ```
@@ -162,7 +165,7 @@ import { SectionTitle } from "erinmyoung-ui";
 Loading spinner component with theme-based sizing options.
 
 ```tsx
-import { Spinner } from "erinmyoung-ui";
+import { Spinner } from "@erinmyoung/erinmyoung-ui";
 
 <Spinner size="medium" />;
 ```
@@ -179,13 +182,13 @@ import {
   portfolioDark,
   storeLight,
   storeDark,
-} from "erinmyoung-ui/themes";
+} from "@erinmyoung/erinmyoung-ui";
 ````
 
 ### Custom Themes
 
 ```tsx
-import type { Theme } from "erinmyoung-ui";
+import type { Theme } from "@erinmyoung/erinmyoung-ui";
 
 const customTheme: Theme = {
   mode: "light",
@@ -263,7 +266,8 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 
 ## 🔗 Links
 
-- [Documentation](https://storybook.js.org/docs)
+- [Documentation (Storybook)](https://storybook.js.org/docs)
 - [GitHub Repository](https://github.com/erinmyoung/erinmyoung-ui)
+- [NPM Package](https://www.npmjs.com/package/@erinmyoung/erinmyoung-ui)
 - [Issues](https://github.com/erinmyoung/erinmyoung-ui/issues)
 - [Changelog](https://github.com/erinmyoung/erinmyoung-ui/releases)

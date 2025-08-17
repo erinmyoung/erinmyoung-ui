@@ -5,7 +5,21 @@ import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [
+    react(),
+    dts({
+      include: ["src"],
+      exclude: [
+        "**/*.test.*",
+        "**/*.stories.*",
+        "**/__test__/**",
+        "**/__docs__/**",
+      ],
+      outDir: "dist",
+      insertTypesEntry: true,
+      tsconfigPath: "./tsconfig.build.json",
+    }),
+  ],
   build: {
     lib: {
       entry: "./src/index.ts",
@@ -14,7 +28,11 @@ export default defineConfig({
       formats: ["cjs", "es"],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
+      external: [
+        ...Object.keys(peerDependencies),
+        "styled-components",
+        "framer-motion",
+      ],
     },
     sourcemap: true,
     emptyOutDir: true,
