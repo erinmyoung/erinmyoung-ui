@@ -1,5 +1,5 @@
 {
-  "name": "erinmyoung-ui",
+  "name": "@erinmyoung/erinmyoung-ui",
   "private": false,
   "version": "1.0.0",
   "description": "A modern React component library built with Storybook, TypeScript, styled-components, and Framer Motion",
@@ -46,7 +46,7 @@
     "precommit": "npm run lint && npm test"
   },
   "publishConfig": {
-    "erinmyoung:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/@erinmyoung"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
