@@ -27,6 +27,7 @@ const StyledArrow = styled.button<ArrowProps>`
         ? "var(--orientation-left)"
         : "var(--orientation-right)"};
     font-size: 34px;
+    line-height: 34px;
   }
 
   &:hover {

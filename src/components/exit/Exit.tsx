@@ -20,6 +20,7 @@ const StyledExit = styled.button<ExitProps>`
   &::after {
     content: "\\00d7";
     font-size: 34px;
+    line-height: 34px;
   }
 
   &:hover {

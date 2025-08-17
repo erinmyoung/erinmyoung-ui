@@ -127,7 +127,9 @@ import { List } from "@erinmyoung/erinmyoung-ui";
 
 ### ScrollProgress
 
-Container-based scroll progress indicator with smooth animations.
+Flexible scroll progress indicator that works with both window scroll and container-based scrolling. When a `$container` ref is provided, it tracks that container's scroll progress; otherwise, it defaults to window scroll.
+
+**Container-based scrolling:**
 
 ```tsx
 import { ScrollProgress } from "@erinmyoung/erinmyoung-ui";
@@ -145,6 +147,21 @@ function ScrollableContent() {
         $right="2rem"
         $bottom="2rem"
       />
+    </div>
+  );
+}
+```
+
+**Window-based scrolling:**
+
+```tsx
+import { ScrollProgress } from "@erinmyoung/erinmyoung-ui";
+
+function App() {
+  return (
+    <div>
+      {/* Your page content */}
+      <ScrollProgress size={80} $right="2rem" $bottom="2rem" />
     </div>
   );
 }

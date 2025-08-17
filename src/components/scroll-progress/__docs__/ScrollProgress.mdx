@@ -6,7 +6,7 @@ import * as ScrollProgress from "./ScrollProgress.stories.tsx";
 
 # ScrollProgress
 
-ScrollProgress component that tracks scroll within a container and displays a fixed progress indicator.
+ScrollProgress component that tracks scroll within a container and displays a fixed progress indicator. If no container is provided, this behavior default to window-based scrolling.
 
 #### Example
 
@@ -40,4 +40,4 @@ const ScrollProgressExample = () => {
 - **$right** - A string for determining how far from the right edge of the window the scroll progress button should be.
 - **$bottom** - A string for determining how far from the bottom edge of the window the scroll progress button should be.
 - **size** - A number for determining the size of the outer circle element and for the 50% calculation of the size for the inner arrow.
-- **$container** - A ref to a container element. The component will track scroll within this container and show as a fixed overlay.
+- **$container** - An optional ref to a container element. The component will track scroll within this container and show as a fixed overlay. If no container is provided, the scroll will be based off the window.

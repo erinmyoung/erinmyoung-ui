@@ -7,7 +7,7 @@ export type ScrollProgressProps = {
   $right?: string;
   $bottom?: string;
   size?: number;
-  $container: RefObject<HTMLElement | null>;
+  $container?: RefObject<HTMLElement | null>;
 };
 
 const StyledProgressButton = styled.button<ScrollProgressProps>`
@@ -69,12 +69,14 @@ const Arrow = styled.div<{ size?: number }>`
 const ScrollProgress = ({
   $right,
   $bottom,
-  size,
+  size = 80,
   $container,
 }: ScrollProgressProps) => {
+  // Use container scroll if $container is provided, otherwise use window scroll
   const { scrollYProgress } = useScroll({
-    container: $container,
+    container: $container || undefined,
   });
+
   const progressValue = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const strokeDasharray = useTransform(progressValue, [0, 1], [283, 0]);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -82,31 +84,53 @@ const ScrollProgress = ({
   useEffect(() => {
     const handleScroll = () => {
       if ($container?.current) {
+        // Container-based scrolling
         setIsDisabled($container.current.scrollTop === 0);
+      } else {
+        // Window-based scrolling
+        setIsDisabled(window.scrollY === 0);
       }
     };
 
+    // Initial check
     handleScroll();
 
-    const scrollTarget = $container?.current;
-    if (scrollTarget) {
+    if ($container?.current) {
+      // Add listener to container
+      const scrollTarget = $container.current;
       scrollTarget.addEventListener("scroll", handleScroll);
 
       return () => {
         scrollTarget.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      // Add listener to window
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
       };
     }
   }, [$container]);
 
   const scrollToTop = () => {
     if ($container?.current) {
+      // Scroll container to top
       $container.current.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      // Scroll window to top
+      window.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",
       });
     }
   };
+
   return (
     <StyledProgressButton
       $right={$right}

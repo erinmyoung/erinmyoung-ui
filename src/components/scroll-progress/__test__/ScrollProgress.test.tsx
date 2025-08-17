@@ -122,4 +122,27 @@ describe("Scroll progress component", () => {
       behavior: "smooth",
     });
   });
+
+  it("Scroll progress should work with window scroll when no container is provided", () => {
+    const windowScrollToSpy = vi.fn();
+    vi.stubGlobal("scrollTo", windowScrollToSpy);
+
+    renderWithPortfolioLight(<ScrollProgress size={80} />);
+    const progress = screen.getByTestId("progress-button");
+
+    // Simulate window scroll
+    act(() => {
+      Object.defineProperty(window, "scrollY", { value: 100, writable: true });
+      fireEvent.scroll(window);
+    });
+
+    expect(progress).not.toBeDisabled();
+
+    fireEvent.click(progress);
+    expect(windowScrollToSpy).toHaveBeenCalledWith({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
 });

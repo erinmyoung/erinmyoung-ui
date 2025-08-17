@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-08-17
+
+### Changed
+
+- Changed ScrollProgress element to default to window-based scrolling
+- Updated ScrollProgress test to account for new window-based scrolling
+- Updated README with window ScrollProgress component option
+- Changed Arrow and Exit button line-height values
+
 ## [1.2.0] - 2025-08-17
 
 ### Changed
