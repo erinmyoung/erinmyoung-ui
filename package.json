@@ -1,7 +1,7 @@
 {
   "name": "@erinmyoung/erinmyoung-ui",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A modern React component library built with Storybook, TypeScript, styled-components, and Framer Motion",
   "author": "Erin Young erinmyoung12@gmail.com",
   "license": "MIT",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/erinmyoung/erinmyoung-ui#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erinmyoung/erinmyoung-ui.git"
+    "url": "git+https://github.com/erinmyoung/erinmyoung-ui.git"
   },
   "bugs": {
     "url": "https://github.com/erinmyoung/erinmyoung-ui/issues"
