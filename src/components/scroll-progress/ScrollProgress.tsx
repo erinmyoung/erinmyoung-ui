@@ -9,9 +9,11 @@ type StyledButtonProps = {
 };
 
 export type ScrollProgressProps = {
+  $right?: string;
+  $bottom?: string;
   size?: number;
   $container?: RefObject<HTMLElement | null>;
-} & StyledButtonProps;
+};
 
 const StyledProgressButton = styled.button<StyledButtonProps>`
   position: fixed;
@@ -69,13 +71,8 @@ const Arrow = styled.div<{ size?: number }>`
   }
 `;
 
-const ScrollProgress = ({
-  $right = "2rem",
-  $bottom = "2rem",
-  size = 80,
-  $container,
-  ...props
-}: ScrollProgressProps) => {
+const ScrollProgress = (props: ScrollProgressProps) => {
+  const { $right = "2rem", $bottom = "2rem", size = 80, $container } = props;
   const { scrollYProgress } = useScroll({
     container: $container || undefined,
   });
