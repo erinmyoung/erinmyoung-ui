@@ -3,14 +3,17 @@ import type { RefObject } from "react";
 import styled from "styled-components";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export type ScrollProgressProps = {
+type StyledButtonProps = {
   $right?: string;
   $bottom?: string;
-  size?: number;
-  $container?: RefObject<HTMLElement | null>;
 };
 
-const StyledProgressButton = styled.button<ScrollProgressProps>`
+export type ScrollProgressProps = {
+  size?: number;
+  $container?: RefObject<HTMLElement | null>;
+} & StyledButtonProps;
+
+const StyledProgressButton = styled.button<StyledButtonProps>`
   position: fixed;
   right: ${(props) => props.$right || "2rem"};
   bottom: ${(props) => props.$bottom || "2rem"};
@@ -71,11 +74,11 @@ const ScrollProgress = ({
   $bottom = "2rem",
   size = 80,
   $container,
+  ...props
 }: ScrollProgressProps) => {
-  // Use container scroll if $container is provided, otherwise use window scroll
-  const { scrollYProgress } = useScroll(
-    $container ? { container: $container } : {},
-  );
+  const { scrollYProgress } = useScroll({
+    container: $container || undefined,
+  });
 
   const progressValue = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const strokeDasharray = useTransform(progressValue, [0, 1], [283, 0]);
@@ -135,7 +138,6 @@ const ScrollProgress = ({
     <StyledProgressButton
       $right={$right}
       $bottom={$bottom}
-      $container={$container}
       disabled={isDisabled}
       onClick={scrollToTop}
       data-testid="progress-button"
@@ -143,6 +145,7 @@ const ScrollProgress = ({
       aria-disabled={isDisabled}
       aria-hidden={isDisabled}
       tabIndex={isDisabled ? -1 : 0}
+      {...props}
     >
       <motion.svg
         width={size}
